@@ -1,0 +1,21 @@
+name: Deploy to Firebase Hosting
+
+on:
+  push:
+    branches:
+      - main  # Change this if you're using a different branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install Firebase CLI
+        uses: w9jds/firebase-action@v13.3.1
+        with:
+          args: deploy --only hosting:www
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
