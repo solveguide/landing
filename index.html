@@ -10,7 +10,9 @@
       --private: #ffffff;
       --public: #e0e0e0;
       --consensus: #81d4fa;
-      --background: #201e1e;
+      --background: #ffffff;
+      --conflict: #e57373;
+      --text-dark: #1c1c1c;
     }
     html {
       scroll-snap-type: y mandatory;
@@ -20,92 +22,101 @@
     }
   </style>
 </head>
-<body class="bg-[var(--background)] text-white font-sans">
+<body class="bg-[var(--background)] text-[var(--text-dark)] font-sans">
+  <!-- Header Bar -->
+  <header class="w-full flex justify-end px-6 py-4 bg-[var(--public)]">
+    <span class="text-xl font-semibold text-[var(--text-dark)]">Solve Guide</span>
+  </header>
+
   <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center px-6 py-12">
-    <img src="logo.png" alt="Solve Guide logo" class="w-24 mb-6" />
-    <h1 class="text-4xl font-bold mb-4 text-center">Solve Guide</h1>
-    <p class="text-lg text-center max-w-xl mb-8 text-[var(--public)]">
-      Solve more issues for good.
-    </p>
-    <a href="/sign-in" class="bg-[var(--consensus)] text-black px-6 py-3 rounded-lg text-center hover:opacity-90 transition">Start Solving a Problem</a>
+  <section class="relative min-h-screen flex flex-col justify-center items-center px-6 py-12">
+    <img src="SGLogo.png" alt="Solve Guide Logo" class="absolute top-4 left-6 w-24" />
+    <div class="absolute top-4 right-6 text-xl font-semibold text-[var(--text-dark)]">Solve Guide</div>
+    <div class="flex flex-col items-center justify-center mb-6">
+      <img src="SolveGuide.gif" alt="Solve Guide animated logo" class="w-24 mb-4" />
+    </div>
+    <h1 class="text-4xl font-bold mb-4 text-center">A guide for your disagreements</h1>
+    <a href="https://app.solve.guide/sign-in" class="bg-[var(--conflict)] text-black px-6 py-3 rounded-lg text-center hover:opacity-90 transition">Start Solving a Problem</a>
   </section>
 
   <!-- Introduction Section -->
-  <section class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
-    <div class="max-w-xl text-[var(--public)]">
+  <section class="min-h-screen flex flex-col items-center justify-center px-6 py-12 bg-[var(--public)]">
+    <div class="max-w-xl text-[var(--text-dark)]">
       <p class="mb-4">
-        Your issues persist because solving them requires you to alternate between two different modes of thinking, often in coordination with others.
+        Disagreements persist because solving them requires you to alternate between two different modes of thinking, often in coordination with others.
       </p>
       <p class="mb-4">
         Getting out of sync while solving issues together can lead to offending or misleading your peers without you even noticing. 
-        <strong class="text-white">Small miscommunications lead to big issues!</strong>
+        <strong class="text-[var(--conflict)]">Small miscommunications lead to big issues!</strong>
       </p>
       <p class="mb-4">
-        Solve Guide coordinates group issue solving. For now you can create an account and solve issues solo. Multiplayer mode is coming!
+        Solve Guide coordinates group issue solving by guiding you when to <strong class="text-[var(--text-dark)]">Think Wide</strong>, and when to <strong class="text-[var(--text-dark)]">Think Narrow</strong>.
       </p>
-      <p class="mb-2">The two modes of thinking are:</p>
-      <p class="mb-2"><strong class="text-[var(--consensus)]">Widening</strong> is creative; imagine all the possibilities without judgement.</p>
-      <p class="mb-4"><strong class="text-[var(--consensus)]">Narrowing</strong> is critical; choose the best available path forward.</p>
-      <p class="mb-4">
-        You will solve more issues for good if you can observe reality creatively and navigate it critically.
-      </p>
-      <p class="text-center text-blue-300 underline"><a href="https://about.solve.guide">Visit about.solve.guide to learn more</a></p>
+      <div class="flex flex-col items-center justify-center mb-6">
+      <a href="https://app.solve.guide/sign-in" class="bg-[var(--consensus)] text-black px-6 py-3 rounded-lg text-center hover:opacity-90 transition">Create an Account</a>
+    </div>
+         
     </div>
   </section>
+  
 
-  <!-- App Screenshots Section -->
-  <section class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
-    <h2 class="text-2xl font-semibold text-white mb-6">See Solve Guide in Action</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <img src="screenshot1.png" alt="App screenshot 1" class="rounded shadow-md" />
-      <img src="screenshot2.png" alt="App screenshot 2" class="rounded shadow-md" />
-      <img src="screenshot3.png" alt="App screenshot 3" class="rounded shadow-md" />
-      <img src="screenshot4.png" alt="App screenshot 4" class="rounded shadow-md" />
-      <img src="screenshot5.png" alt="App screenshot 5" class="rounded shadow-md" />
+  <!-- Widening Section -->
+<section class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
+  <div class="flex flex-col sm:flex-row sm:gap-12 items-center text-center">
+    <div class="sm:w-1/2 mb-6 sm:mb-0">
+      <p class="text-3xl font-bold text-[var(--text-dark)] mb-4">Thinking Wide</p>
+      <p class="text-lg">is creative — imagining all possibilities without judgment.</p>
     </div>
-  </section>
+    <img src="SimpleStart.png" alt="Start screen" class="rounded shadow-md sm:w-1/2 max-w-[400px]" />
+  </div>
+</section>
 
-  <!-- Collaborate CTA Section -->
-  <section class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
-    <h2 class="text-2xl font-semibold mb-4">Collaborate on a Problem</h2>
-    <a href="/sign-in" class="bg-[var(--public)] text-black px-6 py-3 rounded-lg hover:opacity-90 transition">Sign In to Collaborate</a>
-  </section>
+<!-- Narrowing Section -->
+<section class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
+  <div class="flex flex-col sm:flex-row-reverse sm:gap-12 items-center text-center">
+    <div class="sm:w-1/2 mb-6 sm:mb-0">
+      <p class="text-3xl font-bold text-[var(--text-dark)] mb-4">Thinking Narrow</p>
+      <p class="text-lg">is critical — choosing the best available path forward.</p>
+    </div>
+    <img src="SimpleStart2.png" alt="Root cause entry" class="rounded shadow-md sm:w-1/2 max-w-[400px]" />
+  </div>
+</section>
 
-  <!-- Ask a Question Section -->
-  <section class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
-    <form action="https://formspree.io/f/your-form-id" method="POST" class="w-full max-w-md bg-[var(--emphasizeDarkGrey)] p-6 rounded-lg">
-      <h2 class="text-xl font-semibold mb-4">Ask a Question About Solve Guide</h2>
-      <label class="block mb-2 text-sm">Email</label>
-      <input type="email" name="email" required class="w-full p-2 rounded bg-[var(--darkGrey)] text-white mb-4" />
-      <label class="block mb-2 text-sm">Your Question</label>
-      <textarea name="message" required class="w-full p-2 rounded bg-[var(--darkGrey)] text-white mb-4"></textarea>
-      <button type="submit" class="bg-[var(--consensus)] text-black px-4 py-2 rounded hover:opacity-90 transition">Submit</button>
-    </form>
-  </section>
+<!-- Solving Section -->
+<section class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
+  <div class="flex flex-col sm:flex-row sm:gap-12 items-center text-center">
+    <div class="sm:w-1/2 mb-6 sm:mb-0">
+      <p class="text-lg">You will solve more issues for good if you can observe reality creatively and navigate it critically.</p>
+    </div>
+    <img src="SimpleStart3.png" alt="Solution summary" class="rounded shadow-md sm:w-1/2 max-w-[400px]" />
+  </div>
+</section>
+
 
   <!-- Feedback Section -->
   <section class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
-    <h2 class="text-xl font-semibold mb-2">Not convinced?</h2>
-    <p class="mb-4 text-[var(--public)] text-center max-w-md">If you scrolled this far and you're not convinced, I'd love to know what's missing for you.</p>
-    <iframe src="https://tally.so/embed/mYoursurvey" loading="lazy" class="w-full max-w-md h-72 border-0 rounded"></iframe>
+    <h2 class="text-xl font-semibold mb-2 text-[var(--text-dark)]">Not convinced?</h2>
+    <p class="mb-4 text-[var(--text-dark)] text-center max-w-md">If you scrolled this far and haven't tried Solve Guide, I'd love to know what's missing for you.</p>
+          <a href="mailto:contact@solve.guide" class="bg-[var(--consensus)] text-black px-6 py-3 rounded-lg text-center hover:opacity-90 transition">Send Feedback</a>   
+
   </section>
 
   <!-- Footer Section -->
-  <footer class="w-full max-w-md mx-auto px-6 py-8 text-sm text-[var(--public)]">
+  <footer class="w-full max-w-md mx-auto px-6 py-8 text-sm text-[var(--text-dark)] bg-[var(--public)]">
     <div class="mb-6">
-      <h3 class="text-white font-semibold mb-2">About Solve Guide</h3>
+      <h3 class="text-lg font-semibold mb-2">About Solve Guide</h3>
       <p>
-        Solve Guide helps groups explore complex problems together — by separating private ideas, public proposals, and consensus truth.
-        It guides users through widening (creative exploration) and narrowing (critical selection), allowing more issues to be resolved for good.
+        Solve Guide helps groups explore complex problems together — by separating private ideas, public proposals, and shared agreements.
+        It was developed by Lewis Werner, through years of collaborative problem solving in business and in life. 
       </p>
+      <p class="text-center text-blue-800 underline"><a href="https://about.solve.guide">Visit about.solve.guide to learn more</a></p>
     </div>
     <details class="mb-4">
-      <summary class="cursor-pointer font-medium text-white">Terms of Service</summary>
+      <summary class="cursor-pointer font-medium">Terms of Service</summary>
       <p class="mt-2">[Insert your ToS here]</p>
     </details>
     <details>
-      <summary class="cursor-pointer font-medium text-white">Privacy Policy</summary>
+      <summary class="cursor-pointer font-medium">Privacy Policy</summary>
       <p class="mt-2">[Insert your Privacy Policy here]</p>
     </details>
   </footer>
