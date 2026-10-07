@@ -1,124 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solve Guide</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root {
-      --private: #ffffff;
-      --public: #e0e0e0;
-      --consensus: #81d4fa;
-      --background: #ffffff;
-      --conflict: #e57373;
-      --text-dark: #1c1c1c;
-    }
-    html {
-      scroll-snap-type: y mandatory;
-    }
-    section {
-      scroll-snap-align: start;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Solve Guide is being rebuilt for private, local-first problem solving with the people and agents you choose.">
+  <title>Solve Guide — Collaborative problem solving</title>
+  <link rel="icon" href="SGLogo1.png">
+  <style>html{scroll-behavior:smooth;color-scheme:light dark}body{margin:0}#sg-landing svg{width:20px;height:20px;flex-shrink:0}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
 </head>
-<body class="bg-[var(--background)] text-[var(--text-dark)] font-sans">
-  <!-- Header Bar -->
-  <header class="w-full flex justify-end px-6 py-4 bg-[var(--public)]">
-    <span class="text-xl font-semibold text-[var(--text-dark)]">Solve Guide</span>
+<body>
+<style>
+#sg-landing{--sg-paper:light-dark(#ffffff,#111a1e);--sg-ink:light-dark(#182e38,#e9f1f5);--sg-soft:light-dark(#f2f6f8,#1b282f);--sg-line:light-dark(#dae5eb,#34444d);--sg-muted:light-dark(#4e6672,#acbdc7);--sg-cyan:light-dark(#81d4fa,#81d4fa);--sg-blue:light-dark(#006582,#83dcf7);background:var(--sg-paper);color:var(--sg-ink);font:400 16px/1.6 system-ui,sans-serif;overflow-wrap:anywhere}
+#sg-landing *{box-sizing:border-box}#sg-landing h1,#sg-landing h2,#sg-landing h3,#sg-landing p{margin:0}#sg-landing a{color:inherit}#sg-landing .sg-wrap{max-width:1040px;margin:auto;padding:0 32px}#sg-landing .sg-nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:24px;padding-bottom:24px}#sg-landing .sg-wordmark{font-weight:650;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}#sg-landing .sg-mark{display:flex;gap:5px;padding:7px 10px;background:var(--sg-cyan);color:#182e38;border-radius:17px 0 17px 0}#sg-landing .sg-links{display:flex;gap:22px;font-size:13px}#sg-landing .sg-links a{text-decoration:none}#sg-landing .sg-announcement{border-block:1px solid var(--sg-line);background:var(--sg-soft);font-size:13px;padding:11px 32px;text-align:center}#sg-landing .sg-announcement strong{font-weight:600;color:var(--sg-blue)}#sg-landing .sg-hero{padding-top:66px;padding-bottom:56px;display:grid;grid-template-columns:1.15fr 1fr;gap:36px;align-items:center}#sg-landing .sg-kicker{font-size:11px;text-transform:uppercase;letter-spacing:1.7px;color:var(--sg-blue);font-weight:650;margin-bottom:15px}#sg-landing h1{font-size:clamp(34px,5.5vw,58px);line-height:1.08;letter-spacing:-2px;font-weight:650;margin-bottom:23px}#sg-landing .sg-lede{color:var(--sg-muted);font-size:17px;max-width:470px}#sg-landing .sg-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px;align-items:center}#sg-landing .sg-primary{background:var(--sg-cyan);color:#182e38;padding:12px 18px;border-radius:7px;text-decoration:none;font-size:14px;font-weight:600}#sg-landing .sg-secondary{font-size:13px;text-underline-offset:4px}#sg-landing .sg-fine{font-size:12px;color:var(--sg-muted);margin-top:15px}#sg-landing .sg-example{background:var(--sg-soft);padding:22px;border:1px solid var(--sg-line);border-radius:10px}#sg-landing .sg-example-head{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--sg-muted);margin-bottom:15px}#sg-landing .sg-example h3{font-size:18px;line-height:1.4;font-weight:600}#sg-landing .sg-stage-tabs{display:flex;gap:5px;margin:20px 0 16px;flex-wrap:wrap}#sg-landing button{font:inherit;color:inherit}#sg-landing .sg-stage-tabs button{border:1px solid var(--sg-line);background:var(--sg-paper);padding:7px 10px;border-radius:5px;font-size:12px;min-height:36px}#sg-landing .sg-stage-tabs button[aria-pressed=true]{background:var(--sg-cyan);color:#182e38;border-color:var(--sg-cyan)}#sg-landing .sg-example-value{padding:16px;background:var(--sg-paper);border-radius:6px;min-height:130px}#sg-landing .sg-example-value small{color:var(--sg-blue);font-size:11px;letter-spacing:.7px;text-transform:uppercase}#sg-landing .sg-example-value p{font-size:14px;margin-top:8px}#sg-landing .sg-section{padding-top:48px;padding-bottom:48px;border-top:1px solid var(--sg-line)}#sg-landing h2{font-size:30px;line-height:1.2;letter-spacing:-.8px;font-weight:600;margin-bottom:14px}#sg-landing .sg-intro{max-width:620px;color:var(--sg-muted)}#sg-landing .sg-modes{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:28px}#sg-landing .sg-mode{padding:24px;background:var(--sg-soft);border-radius:8px}#sg-landing .sg-mode h3{font-weight:600;font-size:20px;margin-bottom:8px}#sg-landing .sg-mode p{font-size:14px;color:var(--sg-muted)}#sg-landing .sg-mode-label{display:flex;align-items:center;gap:10px;margin-bottom:13px;color:var(--sg-blue)}#sg-landing .sg-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:30px}#sg-landing .sg-trust h3{font-size:16px;font-weight:600;margin:12px 0 7px}#sg-landing .sg-trust p{font-size:13px;color:var(--sg-muted)}#sg-landing .sg-agent{background:var(--sg-soft)}#sg-landing .sg-agent-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:35px;align-items:start}#sg-landing .sg-agent-example{padding:22px;background:var(--sg-paper);border:1px solid var(--sg-line);border-radius:9px}#sg-landing .sg-agent-example p{font-size:15px}#sg-landing .sg-agent-example small{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--sg-blue);display:block;margin-bottom:12px}#sg-landing details{margin-top:20px;font-size:13px}#sg-landing summary{color:var(--sg-blue);min-height:36px}#sg-landing details p{color:var(--sg-muted);margin-top:9px}#sg-landing .sg-rewrite{display:grid;grid-template-columns:1fr 1fr;gap:35px}#sg-landing .sg-status-list{border-top:1px solid var(--sg-line)}#sg-landing .sg-status-item{display:flex;justify-content:space-between;gap:18px;padding:15px 0;border-bottom:1px solid var(--sg-line);font-size:13px}#sg-landing .sg-status-item span{color:var(--sg-muted);text-align:right}#sg-landing .sg-footer{padding-top:27px;padding-bottom:27px;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap;color:var(--sg-muted);font-size:12px;border-top:1px solid var(--sg-line)}#sg-landing .sg-footer a{text-underline-offset:3px}#sg-landing .sg-footer-links{display:flex;flex-wrap:wrap;gap:18px}@media(max-width:650px){#sg-landing .sg-wrap{padding-left:22px;padding-right:22px}#sg-landing .sg-nav{align-items:flex-start}#sg-landing .sg-links{flex-wrap:wrap;gap:12px;font-size:12px;max-width:155px;justify-content:flex-end}#sg-landing .sg-hero{grid-template-columns:1fr;padding-top:42px;gap:30px}#sg-landing .sg-modes,#sg-landing .sg-agent-layout,#sg-landing .sg-rewrite{grid-template-columns:1fr;gap:22px}#sg-landing .sg-trust{grid-template-columns:1fr;gap:24px}#sg-landing .sg-section{padding-top:35px;padding-bottom:35px}#sg-landing .sg-announcement{text-align:left;padding-inline:22px}#sg-landing h2{font-size:27px}#sg-landing .sg-trust h3{margin-top:5px}}@media(pointer:coarse){#sg-landing .sg-stage-tabs button{min-height:44px}#sg-landing .sg-links a{padding-block:8px}}
+</style>
+<div id="sg-landing">
+  <header class="sg-wrap sg-nav">
+    <div class="sg-wordmark"><span class="sg-mark" aria-hidden="true"><i data-lucide="brain"></i><i data-lucide="messages-square"></i></span>Solve Guide</div>
+    <nav class="sg-links" aria-label="Main navigation"><a href="#sg-method">How it works</a><a href="#sg-agents">Your agents</a><a href="https://app.solve.guide/sign-in" target="_blank" rel="noopener">Open Solve Guide ↗</a></nav>
   </header>
-
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex flex-col justify-center items-center px-6 py-12">
-    <img src="SGLogo1.png" alt="Solve Guide Logo" class="absolute top-4 left-6 w-24" />
-    <div class="absolute top-4 right-6 text-xl font-semibold text-[var(--text-dark)]">Solve Guide</div>
-    <div class="flex flex-col items-center justify-center mb-6">
-      <img src="SolveGuide.gif" alt="Solve Guide animated logo" class="w-72 sm:w-[30rem] mb-4" />
+  <div class="sg-announcement"><strong>Solve Guide is being rebuilt</strong> for private, local-first collaboration with the people and agents you choose.</div>
+  <section class="sg-wrap sg-hero">
+    <div>
+      <p class="sg-kicker">Collaborative problem solving</p>
+      <h1>Solve problems with the people who share them.</h1>
+      <p class="sg-lede">Solve Guide gives you a place to work through a problem together, understand why you disagree, and find out whether your solution works.</p>
+      <div class="sg-actions"><a class="sg-primary" href="#sg-method">Explore Solve Guide</a><a class="sg-secondary" href="#sg-agents">Bring your own agent ↓</a></div>
     </div>
-    <h1 class="text-4xl font-bold mb-4 text-center">A guide for your disagreements</h1>
-    <a href="https://app.solve.guide/sign-in" class="bg-[var(--consensus)] text-black px-6 py-3 rounded-lg text-center hover:opacity-90 transition">Start Solving a Problem</a>
-  </section>
-
-  <!-- Introduction Section -->
-  <section class="min-h-screen flex flex-col items-center justify-center px-6 py-12 bg-[var(--public)]">
-    <div class="max-w-xl text-[var(--text-dark)]">
-      <p class="mb-4">
-        Disagreements persist because solving them requires you to alternate between two different modes of thinking, often in coordination with others.
-      </p>
-      <p class="mb-4">
-        Getting out of sync while solving issues together can lead to offending or misleading your peers without you even noticing. 
-        <strong class="text-[var(--conflict)]">Small miscommunications lead to big issues!</strong>
-      </p>
-      <p class="mb-4">
-        Solve Guide coordinates group issue solving by guiding you when to <strong class="text-[var(--text-dark)]">Think Wide</strong>, and when to <strong class="text-[var(--text-dark)]">Think Narrow</strong>.
-      </p>
-      <div class="flex flex-col items-center justify-center mb-6">
-      <a href="https://app.solve.guide/sign-in" class="bg-[var(--consensus)] text-black px-6 py-3 rounded-lg text-center hover:opacity-90 transition">Create an Account</a>
-    </div>
-         
+    <div class="sg-example">
+      <p class="sg-example-head">An example of the process</p>
+      <h3>“Our projects keep missing their deadlines.”</h3>
+      <div class="sg-stage-tabs" aria-label="Explore the example">
+        <button type="button" aria-pressed="true" data-stage="observe">Observe</button><button type="button" aria-pressed="false" data-stage="explain">Explain</button><button type="button" aria-pressed="false" data-stage="choose">Choose</button><button type="button" aria-pressed="false" data-stage="test">Test</button>
+      </div>
+      <div class="sg-example-value" aria-live="polite"><small id="sg-stage-label">Start with what happened</small><p id="sg-stage-copy">Three of our last four projects were delivered late. What else did each person observe?</p></div>
+      <p class="sg-fine">Everyone can contribute their perspective without losing the thread.</p>
     </div>
   </section>
-  
-
-  <!-- Widening Section -->
-<section class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
-  <div class="flex flex-col sm:flex-row sm:gap-12 items-center text-center">
-    <div class="sm:w-1/2 mb-6 sm:mb-0">
-      <p class="text-3xl font-bold text-[var(--text-dark)] mb-4">Thinking Wide</p>
-      <p class="text-lg">is creative — imagining all possibilities without judgment.</p>
+  <section id="sg-method" class="sg-wrap sg-section">
+    <p class="sg-kicker">Keep the conversation in sync</p>
+    <h2>Think wide. Then think narrow.</h2>
+    <p class="sg-intro">Good ideas can get lost when one person is exploring and another is already judging. Solve Guide helps people make room for both kinds of thinking.</p>
+    <div class="sg-modes">
+      <div class="sg-mode"><div class="sg-mode-label"><i data-lucide="expand" aria-hidden="true"></i>Make room for possibilities</div><h3>Think wide</h3><p>Explore what could be causing the problem without having to defend or dismiss every idea as it appears.</p></div>
+      <div class="sg-mode"><div class="sg-mode-label"><i data-lucide="focus" aria-hidden="true"></i>Find a direction together</div><h3>Think narrow</h3><p>Consider the evidence behind each explanation and work toward a decision the people involved can support.</p></div>
     </div>
-    <img src="SimpleStart.png" alt="Start screen" class="rounded shadow-md sm:w-1/2 max-w-[400px]" />
-  </div>
-</section>
-
-<!-- Narrowing Section -->
-<section class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
-  <div class="flex flex-col sm:flex-row-reverse sm:gap-12 items-center text-center">
-    <div class="sm:w-1/2 mb-6 sm:mb-0">
-      <p class="text-3xl font-bold text-[var(--text-dark)] mb-4">Thinking Narrow</p>
-      <p class="text-lg">is critical — choosing the best available path forward.</p>
-    </div>
-    <img src="SimpleStart2.png" alt="Root cause entry" class="rounded shadow-md sm:w-1/2 max-w-[400px]" />
-  </div>
-</section>
-
-<!-- Solving Section -->
-<section class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
-  <div class="flex flex-col sm:flex-row sm:gap-12 items-center text-center">
-    <div class="sm:w-1/2 mb-6 sm:mb-0">
-      <p class="text-lg">You will solve more issues for good if you can observe reality creatively and navigate it critically.</p>
-    </div>
-    <img src="SimpleStart3.png" alt="Solution summary" class="rounded shadow-md sm:w-1/2 max-w-[400px]" />
-  </div>
-</section>
-
-
-  <!-- Feedback Section -->
-  <section class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
-    <h2 class="text-xl font-semibold mb-2 text-[var(--text-dark)]">Not convinced?</h2>
-    <p class="mb-4 text-[var(--text-dark)] text-center max-w-md">If you scrolled this far and haven't tried Solve Guide, I'd love to know what's missing for you.</p>
-          <a href="mailto:contact@solve.guide" class="bg-[var(--consensus)] text-black px-6 py-3 rounded-lg text-center hover:opacity-90 transition">Send Feedback</a>   
-
   </section>
-
-  <!-- Footer Section -->
-  <footer class="w-full max-w-md mx-auto px-6 py-8 text-sm text-[var(--text-dark)] bg-[var(--public)]">
-    <div class="mb-6">
-      <h3 class="text-lg font-semibold mb-2">About Solve Guide</h3>
-      <p>
-        Solve Guide helps groups explore complex problems together — by separating private ideas, public proposals, and shared agreements.
-        It was developed by Lewis Werner, through years of collaborative problem solving in business and in life. 
-      </p>
-      <p class="text-center text-blue-800 underline"><a href="https://about.solve.guide">Visit about.solve.guide to learn more</a></p>
+  <section class="sg-wrap sg-section">
+    <p class="sg-kicker">Local-first collaboration</p>
+    <h2>You keep your own copy.</h2>
+    <p class="sg-intro">Your work lives on your device, so you can keep thinking when you’re offline. When you reconnect, your changes come together with your collaborators’ contributions.</p>
+    <div class="sg-modes">
+      <div class="sg-mode"><div class="sg-mode-label"><i data-lucide="lock-keyhole" aria-hidden="true"></i>Private by design</div><h3>Share on your terms</h3><p>Your personal notes stay yours. Shared Issues are encrypted before they leave your device, so the infrastructure carrying them cannot read their contents.</p></div>
+      <div class="sg-mode"><div class="sg-mode-label"><i data-lucide="users" aria-hidden="true"></i>A record you can return to</div><h3>Understand how you got here</h3><p>See the reasoning behind a decision and what happened when you tested it. Changing your mind doesn’t erase what you previously agreed on.</p></div>
     </div>
-    <details class="mb-4">
-      <summary class="cursor-pointer font-medium">Terms of Service</summary>
-      <p class="mt-2">[Insert your ToS here]</p>
-    </details>
-    <details>
-      <summary class="cursor-pointer font-medium">Privacy Policy</summary>
-      <p class="mt-2">[Insert your Privacy Policy here]</p>
-    </details>
-  </footer>
+  </section>
+  <section id="sg-agents" class="sg-agent sg-section">
+    <div class="sg-wrap sg-agent-layout">
+      <div><p class="sg-kicker">Bring your own agent</p><h2>Give your agent a place at the table.</h2><p class="sg-intro">Use the agent you already work with to help investigate an Issue or challenge an explanation. Its contributions join the same conversation you’re having with the people involved.</p><p class="sg-intro" style="margin-top:15px">The value is in reaching understanding together. An agent can help you get there; agreement still belongs to the people who have to live with the decision.</p><details><summary>Connecting through WebMCP</summary><p>WebMCP gives compatible browser agents a structured way to work with your open Solve Guide session. You choose which agent to use and authorize its access. Contributions follow Solve Guide’s rules and retain their provenance.</p><p>Information you share with an external agent is also subject to that provider’s data practices.</p></details></div>
+      <div class="sg-agent-example"><small>Ask your agent</small><p>“What evidence would help us distinguish between these explanations?”</p><p class="sg-fine">Bring the answer back to the Issue so everyone can examine it.</p></div>
+    </div>
+  </section>
+  <section id="sg-future" class="sg-wrap sg-section">
+    <div><p class="sg-kicker">Why Solve Guide exists</p><h2>A good discussion should lead somewhere.</h2><p class="sg-intro">You don’t need everyone to start with the same explanation. You need a way to understand each other’s reasoning and find a change worth trying. Solve Guide keeps that work connected to the original problem, so you can tell whether it made a difference.</p><div class="sg-actions"><a class="sg-primary" href="mailto:contact@solve.guide">Tell us about your problem</a><a class="sg-secondary" href="https://about.solve.guide" target="_blank" rel="noopener">More about Solve Guide ↗</a></div></div>
+  </section>
+  <footer class="sg-wrap sg-footer"><span>Created by Lewis Werner.<br>Years of collaborative problem solving, in business and in life.</span><div class="sg-footer-links"><a href="mailto:contact@solve.guide">Contact</a><a href="https://about.solve.guide" target="_blank" rel="noopener">About</a><a href="https://app.solve.guide/sign-in" target="_blank" rel="noopener">Current app ↗</a></div></footer>
+</div>
+<script>
+(() => {
+ const root = document.getElementById('sg-landing');
+ const stages = {
+  observe:['Start with what happened','Three of our last four projects were delivered late. What else did each person observe?'],
+  explain:['Explore possible causes','One person points to changing scope. Another thinks the original estimate was unrealistic. What evidence supports each explanation?'],
+  choose:['Choose a direction together','Suppose we agree that changing scope is the main cause. We choose to make scope changes explicit before committing more work.'],
+  test:['Find out whether it worked','For the next project, record scope changes and their effect on delivery. Afterward, compare what happened with what you expected and decide whether the problem is resolved.']
+ };
+ root.querySelectorAll('[data-stage]').forEach(button => button.addEventListener('click', () => {
+  root.querySelectorAll('[data-stage]').forEach(other => other.setAttribute('aria-pressed', String(other === button)));
+  const value=stages[button.dataset.stage];
+  root.querySelector('#sg-stage-label').textContent=value[0];
+  root.querySelector('#sg-stage-copy').textContent=value[1];
+ }));
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+<script>if(window.lucide){lucide.createIcons();}</script>
 </body>
 </html>
